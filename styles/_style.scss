@@ -1,0 +1,16 @@
+section {
+  height: 100vh;
+
+  &:first-child {
+    background: red;
+  }
+
+  &:nth-child(2) {
+    background: green;
+  }
+
+  &:last-child {
+    height: 20vh;
+    background: blue;
+  }
+}

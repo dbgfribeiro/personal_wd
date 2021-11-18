@@ -1,0 +1,21 @@
+@mixin container() {}
+
+@mixin flex($direction: direction, $align: center, $justify: initial) {
+  display: flex;
+  align-items: $align;
+
+  @if $direction !=row {
+    flex-direction: $direction;
+  }
+
+  @if $justify !=initial {
+    justify-content: $justify;
+  }
+}
+
+@mixin font() {}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
