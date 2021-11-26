@@ -1,6 +1,10 @@
-@mixin container() {}
+@mixin container($padding: 4rem, $background: initial, $boxshadow: initial) {
+  padding: $padding;
+  background-color: $background;
+  box-shadow: $boxshadow;
+}
 
-@mixin flex($direction: direction, $align: center, $justify: initial) {
+@mixin flex($direction: row, $align: center, $justify: initial) {
   display: flex;
   align-items: $align;
 
@@ -13,7 +17,10 @@
   }
 }
 
-@mixin font() {}
+@mixin font($style: normal, $weight: 400, $size: $text, $line: 150%, $family: $spacegrotesk) {
+  font: $style $weight $line $family;
+  font-size: $size;
+}
 
 @mixin size($width, $height) {
   width: $width;

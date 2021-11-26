@@ -1,7 +1,7 @@
 nav {
-  width: 100%;
+  @include size(100%, 10vh);
   position: fixed;
-  background: blanchedalmond;
+  z-index: 2;
 
   ul {
     @include flex(row, center, center);
@@ -9,6 +9,12 @@ nav {
 
     li {
       margin: 0 2rem;
+      padding: 0.1rem 0.5rem;
+      color: $white;
+
+      &:hover {
+        background: $blue;
+      }
     }
   }
 }

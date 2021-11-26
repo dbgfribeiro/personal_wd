@@ -5,17 +5,17 @@
 
 html,
 body {
-  @include container();
-  // @include font();
+  @include font();
   font-size: 10px;
   scroll-behavior: smooth;
+  background-color: $white;
 
   h1 {
     font-size: $title;
   }
 
   h3 {
-    font-size: $subtitle;
+    @include font($weight: 300, $size: $subtitle);
   }
 
   p,

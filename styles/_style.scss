@@ -1,16 +1,56 @@
-section {
+#home {
   height: 100vh;
+  background: linear-gradient(110.27deg, rgba(47, 47, 47, 0.98) 0%, #000000 66.15%);
+  position: relative;
 
-  &:first-child {
-    background: red;
+  .intro {
+    @include size(100%, 100%);
+    @include flex($justify: space-evenly);
+    gap: 2rem;
+    padding: 0 10rem;
+    position: absolute;
+    bottom: 0;
+
+    .intro-info {
+      h1 {
+        color: $white;
+      }
+
+      h3 {
+        color: $blue;
+      }
+
+      .icons-wrapper {
+        @include flex();
+        gap: 1rem;
+        margin-top: 3.5rem;
+      }
+    }
+
+    .intro-image {
+      @include size(35rem, 35rem);
+      min-width: 35rem;
+      border-radius: 100%;
+      background: linear-gradient(180deg, $blue 0%, rgba(31, 31, 31, 0) 100%);
+      filter: blur(20px);
+    }
   }
+}
 
-  &:nth-child(2) {
-    background: green;
-  }
+#about {
+  height: 100vh;
+  position: relative;
 
-  &:last-child {
-    height: 20vh;
-    background: blue;
+  .about-info {
+    @include size(100%, 100%);
+    @include flex($justify: center);
+    gap: 2rem;
+    padding: 0 10rem;
+    position: absolute;
+    bottom: 0;
+
+    p {
+      color: $darkblue;
+    }
   }
 }
