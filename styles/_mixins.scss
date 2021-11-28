@@ -1,9 +1,3 @@
-@mixin container($padding: 4rem, $background: initial, $boxshadow: initial) {
-  padding: $padding;
-  background-color: $background;
-  box-shadow: $boxshadow;
-}
-
 @mixin flex($direction: row, $align: center, $justify: initial) {
   display: flex;
   align-items: $align;
