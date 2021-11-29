@@ -1,14 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+@import url('../assets/fonts/Panchang-Extrabold.ttf');
+@import url('../assets/fonts/Satoshi-Regular.ttf');
+@import url('../assets/fonts/Satoshi-Light.ttf');
+
+// @font-face {
+//   font-family: 'Panchang-Extrabold';
+//   src: url('../assets/fonts/Panchang-Extrabold.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'couve';
+//   src: url('../assets/fonts/Satoshi-Regular.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'pera';
+//   src: url('../assets/fonts/Satoshi-Light.ttf') format('truetype');
+// }
+
+
+// @font-face {
+//   font-family: 'Satoshi-Regular';
+//   src: url('../fonts/Satoshi-VariableItalic.ttf') format('truetype');
+// }
 
 $blue: #106373;
+$lightblue: #18AFCC;
 $darkblue: #2E383D;
 $white: #EBEBEB;
 $black: #101010;
 
-$title: 4.8rem;
 $subtitle: 3.2rem;
 $text: 1.6rem;
 $textsmall: 1.4rem;
 
-$spacegrotesk: 'Space Grotesk',
-sans-serif;
+$panchang: 'Panchang-Extrabold';
+$satoshi: 'Satoshi-Regular';
+$satoshiLight: 'Satoshi-Light';

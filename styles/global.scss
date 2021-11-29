@@ -6,16 +6,21 @@
 html,
 body {
   @include font();
+  background-image: url('../assets/back.svg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   font-size: 10px;
   scroll-behavior: smooth;
   background-color: $white;
 
   h1 {
-    font-size: $title;
+    font-family: $panchang;
   }
 
   h3 {
-    @include font($weight: 300, $size: $subtitle);
+    @include font($size: $subtitle);
+    font-family: $satoshiLight;
   }
 
   p,
