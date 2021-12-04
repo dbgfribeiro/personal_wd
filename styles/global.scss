@@ -1,18 +1,13 @@
 @import './_variables';
 @import './_mixins';
-@import './_nav';
 @import './_style';
 
 html,
 body {
   @include font();
-  background-image: url('../assets/back.svg');
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
   font-size: 10px;
-  scroll-behavior: smooth;
-  background-color: $white;
+  background-color: $black;
+  overflow: overlay;
 
   h1 {
     font-family: $panchang;
@@ -66,4 +61,8 @@ body {
     margin: 0;
     padding: 0;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

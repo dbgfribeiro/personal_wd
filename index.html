@@ -8,83 +8,141 @@
   <title>Diogo Ribeiro</title>
 </head>
 <body>
-
   <main>
-    <section id="home">
-      <div class="intro">
-        <div class="intro-info">
-          <img src="./assets/logo.png" alt="logo-DR"/>
-          <h3>Front-End Developer</h3>
-          <p>
-            My name is Diogo and I'm currently in the first year of a Masters in Design and Multimedia, while working as a front-end developer at RedLight.
-          </p>
-        </div>
-        <div class="intro-image">
-        </div>
-        <div class="icons-wrapper">
-          <a href="https://www.linkedin.com/in/dbgfribeiro/" target="_blank"><img src="./assets/icons/linkedin.svg"/></a>
-          <a href="https://github.com/dbgfribeiro" target="_blank"><img src="./assets/icons/github.svg"/></a>
-          <a href="https://www.behance.net/dbgfribeiro" target="_blank"><img src="./assets/icons/behance.svg"/></a>
+
+    <section class="content-container">
+
+      <div class="outer-wrapper">
+        <div class="wrapper">
+
+          <canvas id="myCanvas" resize></canvas>
+
+          <div class="slide intro">
+            <div class="intro-container">
+              <div class="intro-info">
+                <img src="./assets/logo.png" alt="logo-DR"/>
+                <h3>Front-End Developer</h3>
+                <p>
+                  My name is Diogo and I'm currently in the first year of a Masters in Design and Multimedia, while working as a front-end developer at RedLight.
+                </p>
+                <button onclick="goToProjects()">My work →</button>
+              </div>
+              <div class="intro-image">
+              </div>
+              <div class="icons-wrapper">
+                <a href="https://www.linkedin.com/in/dbgfribeiro/" target="_blank"><img src="./assets/icons/linkedin.svg"/></a>
+                <a href="https://github.com/dbgfribeiro" target="_blank"><img src="./assets/icons/github.svg"/></a>
+                <a href="https://www.behance.net/dbgfribeiro" target="_blank"><img src="./assets/icons/behance.svg"/></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="slide work">
+
+            <div class="work-container">
+              <div class="carousel-container">
+
+                <div class="project-modal">
+                  <div class="modal-overlay"></div>
+                  <div class="inner-container">
+                    <h3></h3>
+                    <p></p>
+                    <a target="_blank">Visit here</a>
+                  </div>
+                </div>
+  
+          
+                <button id="prev" class="arrow">←</button>
+
+                <div class="carousel-items">
+
+                  <div class="item" id="ccdm">
+                    <img src="./assets/banners/ccdm.jpg" alt="project-image">
+                    <div class="seemore">
+                      <h3>See more</h3>
+                    </div>
+                  </div>
+                  <div class="item" id="beathit">
+                    <img src="./assets/banners/beathit.jpg" alt="project-image">
+                    <div class="seemore">
+                      <h3>See more</h3>
+                    </div>
+                  </div>
+                  <div class="item" id="kafka">
+                    <img src="./assets/banners/kafka.jpg" alt="project-image">
+                    <div class="seemore">
+                      <h3>See more</h3>
+                    </div>
+                  </div>
+                  <div class="item" id="encmessages">
+                    <img src="./assets/banners/encmessages.jpg" alt="project-image">
+                    <div class="seemore">
+                      <h3>See more</h3>
+                    </div>
+                </div>
+              </div>
+                <button id="next" class="arrow">→</button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    
-    <section id="work">
-      <div class="projects">
-      <div class="carousel-container">
-    
-        <button id="prev">←</button>
-
-        <div class="carousel-items">
-          <div class="item" id="ccdm">
-            <img src="./assets/banners/ccdm.jpg" alt="project-image">
-            <div class="seemore">
-              <h3>See more</h3>
-            </div>
-          </div>
-          <div class="item" id="beathit">
-            <img src="./assets/banners/beathit.jpg" alt="project-image">
-            <div class="seemore">
-              <h3>See more</h3>
-            </div>
-          </div>
-          <div class="item" id="kafka">
-            <img src="./assets/banners/kafka.jpg" alt="project-image">
-            <div class="seemore">
-              <h3>See more</h3>
-            </div>
-          </div>
-          <div class="item" id="encmessages">
-            <img src="./assets/banners/encmessages.jpg" alt="project-image">
-            <div class="seemore">
-              <h3>See more</h3>
-            </div>
-          </div>
-        </div>
-
-        <button id="next">→</button>
-
-        </div>
-
-        <div class="project-modal">
-          <div class="modal-overlay"></div>
-          <div class="inner-container">
-            <h3></h3>
-            <p></p>
-            <a target="_blank">Visit here</a>
-          </div>
-        </div>
-
-      </div>
     </section>
     
   </main>
 
-  <footer id="footer">
-
-  </footer>
-
   <script src="./js/carousel.js"></script>
+  <script src="./js/projects.js"></script>
+  <script type="text/javascript" src="js/paper.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
+    var width, height, center;
+        var points = 5;
+        var smooth = true;
+        var path = new Path({
+            fillColor: '#106373'
+        });
+        var mousePos = view.center / 2;
+        var pathHeight = mousePos.y;
+        initializePath();
+
+        function initializePath() {
+            center = view.center;
+            width = view.size.width;
+            height = view.size.height / 2;
+            path.segments = [];
+            path.add(view.bounds.bottomLeft);
+            for (var i = 1; i < points; i++) {
+                var point = new Point(width / points * i, center.y);
+                path.add(point);
+            }
+            path.add(view.bounds.bottomRight);
+        }
+
+        function onFrame(event) {
+            pathHeight += (center.y - mousePos.y - pathHeight) / 10;
+            for (var i = 1; i < points; i++) {
+                var sinSeed = event.count + (i + i % 10) * 100;
+                var sinHeight = Math.sin(sinSeed / 200) * pathHeight;
+                var yPos = Math.sin(sinSeed / 100) * sinHeight + height;
+                path.segments[i].point.y = yPos;
+            }
+            if (smooth) {
+                path.smooth({ type: 'continuous' });
+            }
+        }
+
+        function onMouseMove(event) {
+            mousePos = event.point;
+        }
+
+        // Reposition the path whenever the window is resized:
+        function onResize(event) {
+            initializePath();
+        }
+  </script>
 </body>
 </html>
