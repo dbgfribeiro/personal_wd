@@ -16,7 +16,9 @@
   font-size: $size;
 }
 
-@mixin size($width, $height) {
+@mixin size($width, $height, $maxWidth: initial, $maxHeight: initial) {
   width: $width;
   height: $height;
+  max-width: $maxWidth;
+  max-height: $maxHeight;
 }

@@ -27,8 +27,6 @@
                 </p>
                 <button onclick="goToProjects()">My work →</button>
               </div>
-              <div class="intro-image">
-              </div>
               <div class="icons-wrapper">
                 <a href="https://www.linkedin.com/in/dbgfribeiro/" target="_blank"><img src="./assets/icons/linkedin.svg"/></a>
                 <a href="https://github.com/dbgfribeiro" target="_blank"><img src="./assets/icons/github.svg"/></a>
@@ -38,22 +36,21 @@
           </div>
 
 
-          <div class="slide work">
+          <div class="slide work" id="work">
 
             <div class="work-container">
-              <div class="carousel-container">
+              <button onclick="goToIntro()" id="back">← Go back</button>
 
-                <div class="project-modal">
-                  <div class="modal-overlay"></div>
-                  <div class="inner-container">
-                    <h3></h3>
-                    <p></p>
-                    <a target="_blank">Visit here</a>
-                  </div>
+              <div class="project-modal">
+                <div class="modal-overlay"></div>
+                <div class="inner-container">
+                  <h3></h3>
+                  <p></p>
+                  <a target="_blank">Visit here</a>
                 </div>
-  
-          
-                <button id="prev" class="arrow">←</button>
+              </div>
+              
+              <div class="carousel-container">
 
                 <div class="carousel-items">
 
@@ -63,28 +60,24 @@
                       <h3>See more</h3>
                     </div>
                   </div>
+
                   <div class="item" id="beathit">
                     <img src="./assets/banners/beathit.jpg" alt="project-image">
                     <div class="seemore">
                       <h3>See more</h3>
                     </div>
                   </div>
-                  <div class="item" id="kafka">
-                    <img src="./assets/banners/kafka.jpg" alt="project-image">
-                    <div class="seemore">
-                      <h3>See more</h3>
-                    </div>
-                  </div>
+
                   <div class="item" id="encmessages">
                     <img src="./assets/banners/encmessages.jpg" alt="project-image">
                     <div class="seemore">
                       <h3>See more</h3>
                     </div>
-                </div>
-              </div>
-                <button id="next" class="arrow">→</button>
-              </div>
+                  </div>
 
+                </div>
+                
+              </div>
             </div>
           </div>
 
@@ -95,8 +88,8 @@
     
   </main>
 
-  <script src="./js/carousel.js"></script>
   <script src="./js/projects.js"></script>
+  <script src="./js/script.js"></script>
   <script type="text/javascript" src="js/paper.js"></script>
   <script type="text/paperscript" canvas="myCanvas">
     var width, height, center;

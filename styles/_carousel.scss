@@ -1,0 +1,90 @@
+.carousel-container {
+  @include size(60vw, 35vw, 90rem, 45rem);
+  position: relative;
+  margin: 0;
+  color: $white;
+  perspective: 100rem;
+  transform-origin: center;
+
+  .carousel-items {
+    @include size(100%, 100%);
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-30vw) rotateY(0);
+    animation: carousel 15s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+
+    .item {
+      @include size(60vw, 35vw, 90rem, 45rem);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, .1);
+      border-radius: 0.8rem;
+      transform-origin: center;
+      transition: 0.5s;
+
+      img {
+        @include size(100%, 100%);
+        border-radius: 0.8rem;
+        object-fit: cover;
+      }
+
+      .seemore {
+        @include size(100%, 100%);
+        @include flex($justify: center);
+        background: rgba($black, 0.9);
+        color: $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:nth-child(1) {
+        transform: rotateY(0) translateZ(35vw);
+      }
+
+      &:nth-child(2) {
+        transform: rotateY(120deg) translateZ(35vw);
+      }
+
+      &:nth-child(3) {
+        transform: rotateY(240deg) translateZ(35vw);
+      }
+    }
+  }
+}
+
+//animation
+
+@keyframes carousel {
+
+  0%,
+  17.5% {
+    transform: translateZ(-35vw) rotateY(0);
+  }
+
+  27.5%,
+  45% {
+    transform: translateZ(-35vw) rotateY(-120deg);
+  }
+
+  55%,
+  72.5% {
+    transform: translateZ(-35vw) rotateY(-240deg);
+  }
+
+  82.5%,
+  100% {
+    transform: translateZ(-35vw) rotateY(-360deg);
+  }
+}

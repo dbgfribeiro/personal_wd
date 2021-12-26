@@ -1,17 +1,15 @@
 @import './_variables';
 @import './_mixins';
+@import './_responsive';
 @import './_style';
+@import './_carousel';
 
 html,
 body {
   @include font();
   font-size: 10px;
   background-color: $black;
-  overflow: overlay;
-
-  h1 {
-    font-family: $panchang;
-  }
+  overflow: hidden;
 
   h3 {
     @include font($size: $subtitle);
