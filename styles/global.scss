@@ -12,8 +12,7 @@ body {
   overflow: hidden;
 
   h3 {
-    @include font($size: $subtitle);
-    font-family: $satoshiLight;
+    @include font($weight: 300, $size: $subtitle);
   }
 
   p,

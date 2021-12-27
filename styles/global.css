@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Space+Grotesk:wght@300;400;500;700&display=swap");
-@import url("../assets/fonts/Satoshi-Regular.ttf");
-@import url("../assets/fonts/Satoshi-Light.ttf");
 .content-container .outer-wrapper {
   width: 100vh;
   height: 100vw;
@@ -322,8 +319,8 @@
           transform-style: preserve-3d;
   -webkit-transform: translateZ(-30vw) rotateY(0);
           transform: translateZ(-30vw) rotateY(0);
-  -webkit-animation: carousel 15s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-          animation: carousel 15s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  -webkit-animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+          animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 .carousel-container .carousel-items .item {
@@ -447,7 +444,7 @@
 
 html,
 body {
-  font: normal 400 150% "Satoshi-Regular";
+  font: normal 400 150% "Poppins", sans-serif;
   font-size: 1.6rem;
   font-size: 10px;
   background-color: #101010;
@@ -456,9 +453,8 @@ body {
 
 html h3,
 body h3 {
-  font: normal 400 150% "Satoshi-Regular";
+  font: normal 300 150% "Poppins", sans-serif;
   font-size: 3.2rem;
-  font-family: "Satoshi-Light";
 }
 
 html p,
