@@ -4,8 +4,8 @@ link.rel = 'icon';
 document.getElementsByTagName('head')[0].appendChild(link);
 
 setInterval(function(){
-  link.href = './assets/d.ico';
+  link.href = './assets/icons/d.ico';
   setTimeout(function(){
-    link.href = './assets/r.ico';
+    link.href = './assets/icons/r.ico';
   }, 2000);
 },4000)
